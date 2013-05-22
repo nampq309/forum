@@ -1,17 +1,5 @@
-(function(utils, $) {
-  var Study = {
-    portletId : "UIStudyPortlet",
-    init : function(elm) {
-      if (elm && String(elm).length > 0) {
-        this.portletId = String(elm);
-      }
-      utils.onResize(Study.onResizeMarkLayer);    
-      Study.showPopupInfo();
-     
-    },   
-    onResizeMarkLayer : function() {
-    	utils.setMaskLayer(Study.portletId);
-    },
+(function($) {
+  var Study = {   
     showPopupInfo : function() {
     	//show User's infos
     	var items = $('.item');
@@ -19,10 +7,13 @@
     		var popup = $('.infoPopup:first');
     		popup.hide(300).removeClass('visible').addClass('invisible').html(''); 
     	}
-    	items.find('img:first').off('click').on('click', function(evt) {
+    	items.find('img:first').on('click', function(evt) {
     		var popup = $('.infoPopup:first')
     		if(popup.length === 0) {
-    			popup = $('<div id="popup" class="popupInfo infoPopup"></div>');
+    			popup = $('<div/>', {
+    				"id": "popup", 
+    				"class": "popupInfo infoPopup"
+    			});    				    			
     			$('.mainContainer:first').append(popup);
     		}
     		popup.hide().html('');
@@ -36,4 +27,4 @@
     }
   };
   return Study;
-})(utils, gj);
+})(gj);

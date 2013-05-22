@@ -1,100 +1,76 @@
 <%
 	def requireJS = _ctx.getRequestContext().getJavascriptManager().getRequireJS();
-	requireJS.addScripts("studyPortlet.init('"+uicomponent.id+"');");
+	requireJS.addScripts("studyPortlet.showPopupInfo();");
 %>
+<div class="uiPollPortlet">
+	<div class="mainContainer">
+		<div class="divItem">
+			<h4 class="spanWithBoder">Contacts Directory</h4>
+		</div>
+		<div class="divItem clear-float">
+			<h6>Results are displayed in alphabetical order</h6>
+		</div>
+		<div class="clearfix"></div>
+		<div class="divItem">
+			<a class="filterCSS" href="#">All</a> <a class="filterCSS" href="#">A</a>
+			<a class="filterCSS" href="#">B</a> <a class="filterCSS" href="#">C</a>
+			<a class="filterCSS" href="#">D</a> <a class="filterCSS" href="#">E</a>
+			<a class="filterCSS" href="#">F</a> <a class="filterCSS" href="#">G</a>
+			<a class="filterCSS" href="#">H</a> <a class="filterCSS" href="#">I</a>
+			<a class="filterCSS" href="#">J</a>
+		</div>
 
-<div class="mainContainer">
-	<div class="divItem">
-		<h4 class="spanWithBoder">Contacts Directory</h4>
-	</div>
-	<div style="clear:both;" class="divItem">
-		<span width="40px" style="float: left; align: right;"><font size="6" color="blue">14</font></span>
-		<span style="margin: 10px 10px;">Results are displayed in alphabetical order</span>
-	</div>
-	<div class="clearfix"></div>
-	<div class="divItem">
-		<a class="filterCSS" href="#">All</a>
-		<a class="filterCSS" href="#">A</a>
-		<a class="filterCSS" href="#">B</a>
-		<a class="filterCSS" href="#">C</a>
-		<a class="filterCSS" href="#">D</a>
-		<a class="filterCSS" href="#">E</a>
-		<a class="filterCSS" href="#">F</a>
-		<a class="filterCSS" href="#">G</a>
-		<a class="filterCSS" href="#">H</a>
-		<a class="filterCSS" href="#">I</a>
-		<a class="filterCSS" href="#">J</a>
-	</div>
-	
-	<div class="divItem">
-		<div class="contact item" id="firstItem">
-			<div style="float: left;">
-			  <img class="avatar" src="/social-resources/skin/images/ShareImages/UserAvtDefault.png" />						
-			</div>			
-			<div style ="width: 400px;">
+		<div class="divItem">
+			<div class="contact circleBorder item">
+				<div class="pull-float">
+					<img class="avatar" src="/social-resources/skin/images/ShareImages/UserAvtDefault.png" />
+				</div>
+				<div>
 					<h4>Aaulus Bagubitor</h4>
-					<span><a href="mailto:user6@exoplatform.com">user6@exoplatform.com</a></span>		
-			</div>		
-			<div align="right" style="margin-bottom: 20px; clear:both;">
-				<button type="button" style="width: 70px; height: 33px; margin-right: 10px;">Connect</button> 
-			</div>			
-		</div>
-		<div class="contact item" id="secondItem">
-			<div style="float: left;">
-			  <img class="avatar" src="/social-resources/skin/images/ShareImages/UserAvtDefault.png" />						
-			</div>			
-			<div style ="width: 400px;">
+					<span><a href="mailto:user6@exoplatform.com">user6@exoplatform.com</a></span>
+				</div>
+				<div align="right" class="clear-float">
+					<button type="button" class="button">Connect</button>
+				</div>
+			</div>
+			<div class="contact circleBorder item">
+				<div class="pull-float">
+					<img class="avatar" src="/social-resources/skin/images/ShareImages/UserAvtDefault.png" />
+				</div>
+				<div>
 					<h4>Abotor Ebedatus</h4>
-					<span><a href="mailto:user6@exoplatform.com">user2@exoplatform.com</a></span>		
-			</div>		
-			<div style="clear:both;"></div>
-			<div align="right" style="margin-bottom: 20px;">
-				<button type="button" style="width: 70px; height: 33px; margin-right: 10px;">Connect</button> 
-			</div>			
-		</div>
-		<div class="contact item">
-			<div style="float: left;">
-			  <img class="avatar" src="/social-resources/skin/images/ShareImages/UserAvtDefault.png" />						
-			</div>			
-			<div style ="width: 400px;">
+					<span><a href="mailto:user6@exoplatform.com">user2@exoplatform.com</a></span>
+				</div>
+				<div align="right" class="clear-float">
+					<button type="button" class="button">Connect</button>
+				</div>
+			</div>
+			<div class="contact circleBorder item">
+				<div class="pull-float">
+					<img class="avatar" src="/social-resources/skin/images/ShareImages/UserAvtDefault.png" />
+				</div>
+				<div>
 					<h4>Angucio Digusguius</h4>
-					<span><a href="mailto:user6@exoplatform.com">user11@exoplatform.com</a></span>		
-			</div>		
-			<div style="clear:both;"></div>
-			<div align="right" style="margin-bottom: 20px;">
-				<button type="button" style="width: 70px; height: 33px; margin-right: 10px;">Connect</button> 
-			</div>			
-		</div>
-		<div class="contact item">
-			<div style="float: left;">
-			  <img class="avatar" src="/social-resources/skin/images/ShareImages/UserAvtDefault.png" />						
-			</div>			
-			<div style ="width: 400px;">
+					<span><a href="mailto:user6@exoplatform.com">user11@exoplatform.com</a></span>
+				</div>
+				<div align="right" class="clear-float">
+					<button type="button" class="button">Connect</button>
+				</div>
+			</div>
+			<div class="contact circleBorder item">
+				<div class="pull-float">
+					<img class="avatar" src="/social-resources/skin/images/ShareImages/UserAvtDefault.png" />
+				</div>
+				<div>
 					<h4>Andatus Abinulcus</h4>
-					<span><a href="mailto:user6@exoplatform.com">user3@exoplatform.com</a></span>		
-			</div>		
-			<div style="clear:both;"></div>
-			<div align="right" style="margin-bottom: 20px;">
-				<button type="button" style="width: 70px; height: 33px; margin-right: 10px;">Connect</button> 
-			</div>			
-		</div>
-		<div style="clear:both;"></div>
-	</div>
-	
-	<div class="popupInfo invisible" id="userInfo">
-		<div class="contact">
-			<div style="float: left;" >
-			  <img class="avatar" id="userAvatar" src="" />						
-			</div>			
-			<div id="nameAndEmail">
-					<h4>xxx</h4>
-					<span><a href="">xxx</a></span>		
-			</div>		
-			<div align="right" style="margin-bottom: 20px; clear:both;">
-				<button type="button" style="width: 70px; height: 33px; margin-right: 10px;">Close</button> 
-			</div>			
-		</div>
-	</div>
-	
-</div>
+					<span><a href="mailto:user6@exoplatform.com">user3@exoplatform.com</a></span>
+				</div>
+				<div align="right" class="clear-float">
+					<button type="button" class="button">Connect</button>
+				</div>
+			</div>
+			<div class="clear-float"></div>
+		</div>		
 
+	</div>
+</div>
