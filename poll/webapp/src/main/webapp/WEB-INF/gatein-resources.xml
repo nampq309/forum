@@ -57,4 +57,19 @@
       <module>base</module>
     </depends>    
   </module>
+	<module>
+		<name>Study</name>
+		<as>study</as>
+		<script>
+			<path>/javascript/eXo/poll/Study.js</path>
+		</script>
+		<depends>
+			<module>ForumUtils</module>
+			<as>utils</as>
+		</depends>
+    <depends>
+      <module>jquery</module>
+      <as>gj</as>
+    </depends> 		
+	</module>
 </gatein-resources>

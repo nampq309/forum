@@ -67,6 +67,7 @@ public class UIPollPortlet extends UIPortletApplication {
       ((UIPollManagement) getChild(UIPollManagement.class).setRendered(true)).updateGrid();
     }
     WebUIUtils.addScripts("bts_tooltip", null, "");
+    WebUIUtils.addScripts("Study", "studyPortlet", "");
     WebUIUtils.addScripts("UIPollPortlet", "pollPortlet", "");
     super.processRender(app, context);
   }
