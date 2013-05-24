@@ -60,6 +60,8 @@ public class FAQEventQuery implements FAQNodeTypes {
   private String             response;
 
   private String             comment;
+  
+  private String             asteriskConditionSearch;
 
   private String             attachment;
 
@@ -511,8 +513,11 @@ public class FAQEventQuery implements FAQNodeTypes {
     StringBuilder questionLanguageSearch = new StringBuilder("");
     if (question != null && question.length() > 0) {
       questionLanguageSearch.append("((exo:language='").append(language).append("')");
-      questionLanguageSearch.append(" and ( jcr:contains(@exo:title,'").append(question).append("') or jcr:contains(@exo:name, '").append(question).append("') )");
-      questionLanguageSearch.append(")");
+      questionLanguageSearch.append(" and ( jcr:contains(@exo:title,'").append(question).append("') or jcr:contains(@exo:name, '").append(question).append("')");
+      //
+      applyAsteriskCondition(questionLanguageSearch, "@exo:title", "@exo:name");
+      questionLanguageSearch.append("))");
+      log.fatal("questionLanguageSearch = "+questionLanguageSearch.toString());
       if (isSearchOnDefaultLanguage)
         isLanguageLevelSearch = false;
       else
@@ -523,8 +528,14 @@ public class FAQEventQuery implements FAQNodeTypes {
     StringBuilder answerSearch = new StringBuilder("");
     if (response != null && response.length() > 0) {
       answerSearch.append("( exo:responseLanguage='").append(language).append("'");
-      answerSearch.append(" and jcr:contains(@exo:responses,'" + response + "')");
-      answerSearch.append(")");
+      if(response.contains(Utils.PERCENT_STR)){
+        answerSearch.append(" and (jcr:like(@exo:responses,'" + response + "')");
+      }else {
+        answerSearch.append(" and (jcr:contains(@exo:responses,'" + response + "')");
+      }
+      //
+      answerSearch = applyAsteriskCondition(answerSearch, "@exo:responses");
+      answerSearch.append("))");
       isAnswerCommentLevelSearch = true;
     }
 
@@ -532,8 +543,15 @@ public class FAQEventQuery implements FAQNodeTypes {
     StringBuilder commentSearch = new StringBuilder();
     if (comment != null && comment.length() > 0) {
       commentSearch.append("( exo:commentLanguage='").append(language).append("'");
-      commentSearch.append(" and jcr:contains(@exo:comments,'" + comment + "')");
-      commentSearch.append(")");
+      if(comment.contains(Utils.PERCENT_STR)){
+        commentSearch.append(" and (jcr:like(@exo:comments,'" + comment + "')");
+      }else {
+        commentSearch.append(" and (jcr:contains(@exo:comments,'" + comment + "')");
+      }
+      //
+      commentSearch = applyAsteriskCondition(commentSearch, "@exo:comments");
+      
+      commentSearch.append("))");
       isAnswerCommentLevelSearch = true;
     }
 
@@ -649,6 +667,46 @@ public class FAQEventQuery implements FAQNodeTypes {
         queryString.append(ASCENDING);
       }
     return queryString;
+  }
+  
+  private StringBuilder applyAsteriskCondition(StringBuilder sb, String... jcrField) {
+    //for asterisk condition search
+    if(asteriskConditionSearch != null && asteriskConditionSearch.length() > 0){
+      //
+      List<String> conditions = processUnifiedSearchCondition(asteriskConditionSearch);
+      for(String condition : conditions) {
+        String jcrQuery = "jcr:contains";
+        if(condition.contains(Utils.PERCENT_STR)) {
+          jcrQuery = "jcr:like";
+        }
+        //
+        for (String field : jcrField) {
+          sb.append(" or " + jcrQuery + "(" + field + ",'" + condition + "')");
+        }     
+      }
+    }
+    return sb;
+  }
+  
+  private List<String> processUnifiedSearchCondition(String searchCondition) {
+    String[] searchConditions = searchCondition.split(" ");
+    List<String> result = new ArrayList<String>(searchConditions.length);
+    //
+    StringBuffer searchConditionBuffer = null;
+    for (String conditionValue : searchConditions) {
+      //
+      searchConditionBuffer = new StringBuffer();
+      //
+      if (!conditionValue.contains(Utils.ASTERISK_STR) && !conditionValue.contains(Utils.PERCENT_STR)) {
+        searchConditionBuffer.append(Utils.ASTERISK_STR).append(conditionValue).append(Utils.ASTERISK_STR);
+      } else {
+        conditionValue = conditionValue.replace(Utils.ASTERISK_STR, Utils.PERCENT_STR);
+        searchConditionBuffer.append(Utils.PERCENT_STR).append(conditionValue).append(Utils.PERCENT_STR);
+      }
+      //
+      result.add(searchConditionBuffer.toString());
+    }
+    return result;
   }
 
   private StringBuilder buildCategoryAndQuestionQuery() {
@@ -767,6 +825,14 @@ public class FAQEventQuery implements FAQNodeTypes {
 
   public String getComment() {
     return comment;
+  }
+
+  public String getAsteriskConditionSearch() {
+    return asteriskConditionSearch;
+  }
+
+  public void setAsteriskConditionSearch(String asteriskConditionSearch) {
+    this.asteriskConditionSearch = asteriskConditionSearch;
   }
 
   public int getOffset() {

@@ -125,4 +125,13 @@ public class UtilsTestCase extends TestCase {
     assertFalse(pattern.matcher(input5).find());
   }
   
+  public void testStringContains() throws Exception {
+    String input = "abcdef";
+    assertTrue(input.contains("a"));
+    assertTrue(input.startsWith("a"));
+    assertTrue(input.contains("f"));
+    assertTrue(input.endsWith("f"));
+    assertTrue(input.contains("c"));
+  }
+  
 }

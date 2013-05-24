@@ -25,7 +25,6 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({ 
   UtilsTestCase.class,
-  FAQEventQueryTestCase.class,
   InitialDataPluginSimpleTestCase.class
 })
 public class NoContainerTestSuite {
