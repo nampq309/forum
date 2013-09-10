@@ -74,10 +74,26 @@
     <dependency>
       <groupId>org.gatein.portal</groupId>
       <artifactId>exo.portal.component.web.resources</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>org.apache.ant</groupId>
+      		<artifactId>ant</artifactId>
+      	</exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.gatein.portal</groupId>
       <artifactId>exo.portal.webui.eXo</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>org.apache.tomcat</groupId>
+      		<artifactId>el-api</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>commons-logging</groupId>
+      		<artifactId>commons-logging</artifactId>
+      	</exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.gatein.portal</groupId>
@@ -86,6 +102,20 @@
     <dependency>
       <groupId>org.gatein.portal</groupId>
       <artifactId>exo.portal.webui.portal</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>org.apache.tomcat</groupId>
+      		<artifactId>el-api</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.apache.tomcat</groupId>
+      		<artifactId>jasper-el</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>commons-logging</groupId>
+      		<artifactId>commons-logging</artifactId>
+      	</exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.gatein.portal</groupId>
