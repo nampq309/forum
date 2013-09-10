@@ -29,18 +29,117 @@
     <dependency>
       <groupId>org.exoplatform.commons</groupId>
       <artifactId>commons-webui-component</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>commons-lang</groupId>
+      		<artifactId>commons-lang</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>javax.jcr</groupId>
+      		<artifactId>jcr</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.jcr</groupId>
+      		<artifactId>exo.jcr.component.core</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.kernel</groupId>
+      		<artifactId>exo.kernel.commons</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.kernel</groupId>
+      		<artifactId>exo.kernel.container</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.platform-ui</groupId>
+      		<artifactId>platform-ui-webui-core</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.resources</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.web.controller</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.webui.portal</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.web.resources</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.portal</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.webui.portlet</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.webui.framework</artifactId>
+      	</exclusion>
+
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.core</groupId>
       <artifactId>exo.core.component.organization.api</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>org.exoplatform.core</groupId>
+      		<artifactId>exo.core.component.security.core</artifactId>
+      	</exclusion>
+      	
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.core</groupId>
       <artifactId>exo.core.component.security.core</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>org.exoplatform.kernel</groupId>
+      		<artifactId>exo.kernel.container</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.kernel</groupId>
+      		<artifactId>exo.kernel.component.common</artifactId>
+      	</exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-answer-service</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.resources</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.web.controller</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.forum</groupId>
+      		<artifactId>forum-application-common</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.forum</groupId>
+      		<artifactId>forum-component-common</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.chromattic</groupId>
+      		<artifactId>chromattic.core</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.common</artifactId>
+      	</exclusion>
+      	
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
@@ -51,6 +150,37 @@
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
       <artifactId>forum-component-bbcode</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.webui.portal</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.xwiki.rendering</groupId>
+      		<artifactId>xwiki-rendering-api</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.xwiki.commons</groupId>
+      		<artifactId>xwiki-commons-xml</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.xwiki.commons</groupId>
+      		<artifactId>xwiki-commons-configuration-api</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.xwiki.commons</groupId>
+      		<artifactId>xwiki-commons-properties</artifactId>
+      	</exclusion>
+      	<exclusion>
+        	<groupId>dom4j</groupId>
+        	<artifactId>dom4j</artifactId>
+        </exclusion>
+        <exclusion>
+        	<groupId>xerces</groupId>
+        	<artifactId>xercesImpl</artifactId>
+        </exclusion>
+      	
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.forum</groupId>
@@ -67,6 +197,37 @@
     <dependency>
       <groupId>org.exoplatform.jcr</groupId>
       <artifactId>exo.jcr.component.core</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>commons-lang</groupId>
+      		<artifactId>commons-lang</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>javax.jcr</groupId>
+      		<artifactId>jcr</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.kernel</groupId>
+      		<artifactId>exo.kernel.container</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.kernel</groupId>
+      		<artifactId>exo.kernel.component.cache</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.kernel</groupId>
+      		<artifactId>exo.kernel.component.common</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.core</groupId>
+      		<artifactId>exo.core.component.organization.api</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.core</groupId>
+      		<artifactId>exo.core.component.security.core</artifactId>
+      	</exclusion>
+      	
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.kernel</groupId>
@@ -75,22 +236,217 @@
     <dependency>
       <groupId>org.exoplatform.kernel</groupId>
       <artifactId>exo.kernel.component.common</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>org.exoplatform.kernel</groupId>
+      		<artifactId>exo.kernel.container</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>javax.activation</groupId>
+      		<artifactId>activation</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>javax.mail</groupId>
+      		<artifactId>mail</artifactId>
+      	</exclusion>
+      	
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.kernel</groupId>
       <artifactId>exo.kernel.container</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>commons-beanutils</groupId>
+      		<artifactId>commons-beanutils</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.kernel</groupId>
+      		<artifactId>exo.kernel.commons</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.wci</groupId>
+      		<artifactId>wci-wci</artifactId>
+      	</exclusion>
+      	
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.platform-ui</groupId>
       <artifactId>platform-ui-webui-core</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.portal</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.web.server</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.webui.framework</artifactId>
+      	</exclusion>
+      	
+      </exclusions>
     </dependency> 
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-component-core</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>commons-lang</groupId>
+      		<artifactId>commons-lang</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>javax.jcr</groupId>
+      		<artifactId>jcr</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>javax.portlet</groupId>
+      		<artifactId>portlet-api</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.commons</groupId>
+      		<artifactId>commons-component-common</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.commons</groupId>
+      		<artifactId>commons-component-upgrade</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.core</groupId>
+      		<artifactId>exo.core.component.organization.api</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.core</groupId>
+      		<artifactId>exo.core.component.security.core</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.jcr</groupId>
+      		<artifactId>exo.jcr.component.core</artifactId>
+      	</exclusion>
+      	<exclusion>
+        	<groupId>org.exoplatform.kernel</groupId>
+        	<artifactId>exo.kernel.container</artifactId>
+        </exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.kernel</groupId>
+      		<artifactId>exo.kernel.component.cache</artifactId>
+      	</exclusion>
+      	<exclusion>
+        	<groupId>org.exoplatform.kernel</groupId>
+        	<artifactId>exo.kernel.commons</artifactId>
+        </exclusion>
+      	<exclusion>
+        	<groupId>org.exoplatform.social</groupId>
+        	<artifactId>social-component-common</artifactId>
+        </exclusion>
+      	<exclusion>
+        	<groupId>org.gatein.common</groupId>
+        	<artifactId>common-common</artifactId>
+        </exclusion>
+      	<exclusion>
+        	<groupId>org.gatein.common</groupId>
+        	<artifactId>common-logging</artifactId>
+        </exclusion>
+      	<exclusion>
+        	<groupId>org.gatein.portal</groupId>
+        	<artifactId>exo.portal.component.common</artifactId>
+        </exclusion>
+        <exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.portal</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.webui.framework</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.resources</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.web.controller</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.webui.portal</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.webui.portlet</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.common</groupId>
+      		<artifactId>common-common</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.common</groupId>
+      		<artifactId>common-logging</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.chromattic</groupId>
+      		<artifactId>chromattic.api</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.chromattic</groupId>
+      		<artifactId>chromattic.ext</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.chromattic</groupId>
+      		<artifactId>chromattic.spi</artifactId>
+      	</exclusion>
+      	
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.exoplatform.social</groupId>
       <artifactId>social-component-common</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>commons-lang</groupId>
+      		<artifactId>commons-lang</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>javax.jcr</groupId>
+      		<artifactId>jcr</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.chromattic</groupId>
+      		<artifactId>chromattic.api</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.core</groupId>
+      		<artifactId>exo.core.component.organization.api</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.jcr</groupId>
+      		<artifactId>exo.jcr.component.core</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.kernel</groupId>
+      		<artifactId>exo.kernel.commons</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.exoplatform.kernel</groupId>
+      		<artifactId>exo.kernel.container</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.pc</groupId>
+      		<artifactId>pc-api</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.common</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.web.api</artifactId>
+      	</exclusion>
+      	
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.gatein.portal</groupId>
@@ -99,6 +455,17 @@
     <dependency>
       <groupId>org.gatein.portal</groupId>
       <artifactId>exo.portal.component.portal</artifactId>
+      <exclusions>
+      	<exclusion>
+      		<groupId>org.exoplatform.jcr</groupId>
+      		<artifactId>exo.jcr.component.ext</artifactId>
+      	</exclusion>
+      	<exclusion>
+      		<groupId>org.gatein.portal</groupId>
+      		<artifactId>exo.portal.component.common</artifactId>
+      	</exclusion>
+      	
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.gatein.portal</groupId>
